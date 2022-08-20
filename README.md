@@ -8,7 +8,7 @@ At the same time, SmartPip can also share third-party libraries in local reposit
 
 
 
-## Installation 
+## How to install
 
 ```shell
 cd smartpip/
@@ -17,7 +17,7 @@ python setup.py install # install smartpip
 
 
 
-## Use
+## How to use
 
 ### Example
 
@@ -25,17 +25,12 @@ python setup.py install # install smartpip
 # requirements.txt
 # 	idna>2.6
 #		requests==2.22.0
-cd example/
-PySI -r requirements.txt
 ```
 
-
-
-## Result
-
-#### use smartPip to solver and install requirements.txt
+### use smartPip to solver and install
 
 ```shell
+cd example/
 PySI -r requirements.txt -g
 
 install file has been successfully output
@@ -51,7 +46,7 @@ req.txt : requirements.txt
 
 ## Compare smartPip to pip
 
-#### use pip to install requirements.txt
+### use pip to install requirements.txt
 
 ```shell
 pip install -r requirements.txt
