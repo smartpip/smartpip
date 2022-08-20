@@ -505,7 +505,8 @@ def main():
     if not need_create_venv:
         if server_is_start() is False:
             print('server disabled. please exec shell "PySI -s" first.')
-            return
+            current_folder = os.path.dirname(os.path.abspath(__file__)) + "/"
+            subprocess.call(["sh " + current_folder + "server.sh"], shell=True)
 
         if req_file == "":
             # 无参数运行setup.txt
