@@ -1,2 +1,2 @@
 #!/bin/bash
-nohup PyDR -S > /dev/null 2>&1 &
+nohup smartPip -S > /dev/null 2>&1 &
