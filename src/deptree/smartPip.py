@@ -436,6 +436,19 @@ def server_is_start():
         return False
 
 
+def wait_server_start():
+    start = False
+    while start is False:
+        try:
+            conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            conn.connect((LOCAL_HOST, TCP_PORT))
+            print('%s:%s server is started' % (LOCAL_HOST, TCP_PORT))
+            start = True
+            conn.close()
+        except ConnectionRefusedError:
+            start = False
+
+
 def read_file(file_path):
     file = open(file_path, "r")
     data = file.read().splitlines()
@@ -507,7 +520,7 @@ def main():
             print('server disabled.\nrunning......  please wait 10s.')
             current_folder = os.path.dirname(os.path.abspath(__file__)) + "/"
             subprocess.call(["sh " + current_folder + "server.sh"], shell=True)
-            time.sleep(10)
+            wait_server_start()
 
         if req_file == "":
             # 无参数运行setup.txt
