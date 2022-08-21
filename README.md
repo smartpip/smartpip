@@ -22,9 +22,9 @@ python setup.py install # install smartpip
 ### Example
 
 ```shell
-# requirements.txt
-# 	idna>2.6
-#		requests==2.22.0
+requirements.txt
+#idna>2.6
+#requests==2.22.0
 ```
 
 ### use smartPip to solver and install
@@ -36,10 +36,10 @@ PySI -r requirements.txt -g
 install file has been successfully output
 req.txt : requirements.txt
 
-# install.txt
-#		idna==2.8
-# ......
-#		requests==2.22.0
+install.txt
+#idna==2.8
+#......
+#requests==2.22.0
 ```
 
 
