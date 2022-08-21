@@ -504,9 +504,10 @@ def main():
 
     if not need_create_venv:
         if server_is_start() is False:
-            print('server disabled. please exec shell "smartpip -s" first.')
+            print('server disabled.\nrunning......  please wait 10s.')
             current_folder = os.path.dirname(os.path.abspath(__file__)) + "/"
             subprocess.call(["sh " + current_folder + "server.sh"], shell=True)
+            time.sleep(10)
 
         if req_file == "":
             # 无参数运行setup.txt
