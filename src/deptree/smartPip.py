@@ -504,7 +504,7 @@ def main():
 
     if not need_create_venv:
         if server_is_start() is False:
-            print('server disabled. please exec shell "PySI -s" first.')
+            print('server disabled. please exec shell "smartpip -s" first.')
             current_folder = os.path.dirname(os.path.abspath(__file__)) + "/"
             subprocess.call(["sh " + current_folder + "server.sh"], shell=True)
 
