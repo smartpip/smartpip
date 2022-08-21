@@ -522,6 +522,7 @@ def main():
             subprocess.call(["sh " + current_folder + "server.sh"], shell=True)
             wait_server_start()
 
+        solve_time_start = time.time()
         if req_file == "":
             # 无参数运行setup.txt
             analysis_from_setup()
@@ -533,9 +534,10 @@ def main():
             analysis_from_req(req_file)
 
         end = time.time()
-        print("solve time:" + str(end - start))
+        print("solve time:" + str(end - solve_time_start))
 
     else:
+        install_time_start = time.time()
         if os.path.exists(install_req_file) is False:
             print("文件不存在")
             exit(2)
@@ -545,7 +547,7 @@ def main():
             print("ERROR : " + str(exc))
 
         end = time.time()
-        print("install time:" + str(end - start))
+        print("install time:" + str(end - install_time_start))
 
 
 # 命令行入口
